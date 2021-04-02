@@ -19,3 +19,5 @@ if __name__ == '__main__':
         print("You are lucky!")
     else:
         print("Boo...")
+else:
+    print('!!!!!!!!!!!')
