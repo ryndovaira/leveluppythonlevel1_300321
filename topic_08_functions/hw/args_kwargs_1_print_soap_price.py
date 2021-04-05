@@ -7,5 +7,5 @@
 
 В функции main вызывается функция print_soap_price и передается название мяла и произвольное количество цен.
 
-Пример: print_soap_price(‘Dove’, 10, 50) или print_soap_price(‘Мылко’, 456, 876, 555).
+Пример: print_soap_price('Dove’, 10, 50) или print_soap_price('Мылко’, 456, 876, 555).
 """
