@@ -12,3 +12,25 @@
 Если строка не соответствует этим требованиям, то вернуть None.
 Пример (с ошибкой): '765eew', '5 57 767', '$ewe23', '664.232', ''.
 """
+
+
+def sum_numbers(string):
+    # if not string:
+    #     return None
+
+    if not string.isdigit():
+        return None
+
+    my_sum = 0
+    for my_symbol in string:
+        # if not my_symbol.isdigit():
+        #     return None
+        my_sum += int(my_symbol)
+
+    return my_sum
+
+
+if __name__ == '__main__':
+    print(sum_numbers("4*6"))
+
+    print("0603".isdigit())
