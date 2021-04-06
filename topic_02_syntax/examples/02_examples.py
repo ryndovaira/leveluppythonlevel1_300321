@@ -60,7 +60,7 @@ if age > 25:
 elif age < 5:
     print("?")
 
-# ---------
+# ----------------
 
 if age > 10:
     print('Yes')
