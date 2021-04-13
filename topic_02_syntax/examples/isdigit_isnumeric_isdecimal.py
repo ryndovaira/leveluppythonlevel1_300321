@@ -1,8 +1,8 @@
 def check_str(my_str):
     print(f"mystr: {my_str}")
     print(f"isnumeric: {str.isnumeric(my_str)}")
-    print(f"isdecimal: {str.isdecimal(my_str)}")
     print(f"isdigit: {str.isdigit(my_str)}")
+    print(f"isdecimal: {str.isdecimal(my_str)}")
     print("-" * 50)
 
 
