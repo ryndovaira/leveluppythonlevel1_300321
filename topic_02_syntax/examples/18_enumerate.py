@@ -1,3 +1,15 @@
+for char in "qwertyu":
+    print(char)
+
+for index, char in enumerate("qwertyu"):
+    print(f"index: {index}\t"
+          f"char: {char}")
+    if index % 2 == 0:
+        print("Even!")
+
+print('-' * 50)
+
+# ------------------------------------
 my_list = [1, 'tytyt', 2, 3]
 
 for index, element in enumerate(my_list):

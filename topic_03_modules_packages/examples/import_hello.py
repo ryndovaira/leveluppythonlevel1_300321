@@ -1,5 +1,7 @@
 # Импортируем функцию hello из модуля hello
-import hello  # import topic_3_modules_packages.examples.hello
+# import hello
+# аналогично
+from topic_03_modules_packages.examples import hello
 
 # importing hello module
 
@@ -12,3 +14,10 @@ print(hello.__file__)
 
 print(hello.__name__)
 # hello
+
+print(hello.hello('Ira'))
+
+print(hello.fun1(4, 5))
+
+print(hello.my_global_var)
+

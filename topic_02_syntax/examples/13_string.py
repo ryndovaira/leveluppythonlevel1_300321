@@ -38,3 +38,39 @@ my_words = my_long_text.split()
 print(my_words)
 print(my_words[3])
 print(my_words[3:26:2])
+
+# -------------------------------------------
+
+my_new_str = "1234567890111"
+
+s1 = my_new_str.replace('7', '!')
+print(f"s1: {s1}")
+
+s2 = my_new_str.replace('678', "&")
+print(f"s2: {s2}")
+
+s3 = my_new_str.replace('1', "$", 3)
+print(f"s3: {s3}")
+
+s4 = (my_new_str[::-1].replace('1', "$", 3))[::-1]
+print(f"s3: {s4}")
+
+my_new_str = my_new_str.replace('0', '?')
+print(f"my_new_str: {my_new_str}")
+
+# --------------------------------------
+
+
+my_str_text = "привет я текст! Я Проверяю Методы Строки."
+print(my_str_text.upper())
+print(my_str_text.lower())
+print(my_str_text.capitalize())     # первое слово с большой буквы
+print(my_str_text.title())      # каждое слово с большой буквы
+
+# -----------------------------------
+
+print(my_str_text.find('текст'))
+print(my_str_text.find('ве'))
+print(my_str_text.rfind('ве'))      # r значит, что ищет справа налево
+print(my_str_text.find('hello'))    # -1 значит такой подстроки нет
+print(my_str_text.find('текстом'))    # -1 значит такой подстроки нет

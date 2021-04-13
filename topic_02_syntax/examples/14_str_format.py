@@ -6,14 +6,19 @@ print('{}, {}, {}'.format('a', 'b', 'c'))
 
 print('{2}, {1}, {0}'.format('a', 'b', 'c'))
 
-print('{2}, {1}, {0}'.format(*'abc'))
-
 print('{0}{1}{0}'.format('abra', 'cad'))
 
+print('{f}{sec}{lolo}'.format(f='abra', lolo='cad', sec=55))
+
+var1 = 7
+var2 = "opopo"
+print("{0}-{1}-{0}-{0}-{1}-{1}".format(var1, var2))
+print(f"{var1}-{var2}-{var1}-{var1}-{var2}-{var2}")
 
 print('------------------------------------------------------------------------------------------------------------')
 print('-------------------------------------------- Advanced information ------------------------------------------')
 
+print('{2}, {1}, {0}'.format(*'abc'))
 print('Coordinates: {latitude}, {longitude}'.format(latitude='37.24N', longitude='-115.81W'))
 
 coord = {'latitude': '37.24N', 'longitude': '-115.81W'}
