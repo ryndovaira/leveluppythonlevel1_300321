@@ -40,6 +40,12 @@ names[2] = 'Thorn'
 print(names)
 # ['Kevin', 'Thibaut', 'Thorn']
 
+names[0:2] = ['New list!']
+print(names)
+
+names[0:2] = 'New string!'
+print(names)
+
 print(names + ['Jan', 'Vincent', 'Thomas'])
 # ['Kevin', 'Thibaut', 'Thorn', 'Jan', 'Vincent', 'Thomas']
 
@@ -78,9 +84,12 @@ print('1,2,3'.split(','))  # ['1', '2', '3']
 
 print("-".join(['1', '2', '3']))  # 1-2-3
 
+print(['1', '2', '3'], [6, '55', 99], sep='*')  # ['1', '2', '3']*[6, '55', 99]
+
 print('\n--------------------------------------- Copy (mutable) ------------------------------------------------------')
 my_list_1 = [0, 1, 2, 3]
-my_list_2 = my_list_1.copy()  # !!!
+# my_list_2 = my_list_1.copy()
+my_list_2 = my_list_1
 print(my_list_1, my_list_2)
 
 my_list_1.append(99)
