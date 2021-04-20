@@ -8,7 +8,7 @@ def test_string_2_print_3th_symbols_ep_ok(capsys):
 
     print_3th_symbols('asd')
     out, err = capsys.readouterr()
-    assert out == 'd\n'
+    assert out == 'a\n'
 
 
 def test_string_2_print_3th_symbols_bv(capsys):
