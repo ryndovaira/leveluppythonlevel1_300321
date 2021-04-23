@@ -16,3 +16,29 @@
 Если словарь пустой, то возвращать строку "Dictionary is empty!".
 Если строка для поиска пустая, то возвращать строку "Phone number is empty!".
 """
+
+
+def get_name_by_number(my_dict: dict, tel: str):
+    if type(my_dict) != dict:
+        return "Dictionary must be dict!"
+    elif type(tel) != str:
+        return "Phone number must be str!"
+    elif len(my_dict) == 0:
+        return "Dictionary is empty!"
+    elif len(tel) == 0:
+        return "Phone number is empty!"
+    else:
+        names = []
+        for name, tels in my_dict.items():
+            if tel in tels:
+                names.append(name)
+
+        return names if len(names) > 0 else f"Can't find phone: {tel}"
+
+
+if __name__ == '__main__':
+    test_dict = {"ira": ["1-2-3"],
+                 "ivan": ["33-44-55", "99-3-1"],
+                 "olga": ["99-3-1"]}
+
+    get_name_by_number(test_dict, "99-3-1")

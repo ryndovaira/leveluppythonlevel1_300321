@@ -26,6 +26,12 @@ print(f'x = {x}')
 (company, emp, profile) = x  # можно без ()
 print(f'company = {company}\nemp = {emp}\nteacher = {profile}')
 
+# ValueError: too many values to unpack (expected 2)
+# (company, emp) = x
+
+# в переменную со * сохранятся остальные значения
+(company, *emp_profile) = x
+
 # Кортежи при написании перестановкой значений
 a = 1
 b = 2
@@ -44,3 +50,30 @@ def fun_return_multi_result():
 res = fun_return_multi_result()
 
 a, b, c = fun_return_multi_result()
+
+var1, _, var3 = fun_return_multi_result()
+
+
+# -------------------------------------------
+
+def my_strange_fun(n):
+    if n == 0:
+        return 'Zero',  # tuple из 1 элементов
+    elif n > 0:
+        return 'Big number', n  # tuple из 2 элементов
+    elif n < 0:
+        return 'Small number', -1, None  # tuple из 3 элементов
+
+
+my_res0 = my_strange_fun(0)
+my_res4 = my_strange_fun(4)
+my_res_3 = my_strange_fun(-3)
+
+if len(my_res4) == 2:
+    print('It is a positive number')
+
+# ----------------------------------------------
+
+# list  - это итерируемый тип и поэтому его можно использовать в for
+for element in (2, None, 'opopo', 7.77):
+    print(element)

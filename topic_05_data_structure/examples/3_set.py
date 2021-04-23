@@ -34,6 +34,22 @@ print('set_1.intersection(set_3) => ', set_1.intersection(set_3))
 print('set_1.union(set_3) => ', set_1.union(set_3))
 print('set_1.union(set_2, set_3) => ', set_1.union(set_2, set_3))
 
+# можно передавать итерируемые типы (которые подходят для цикла for)
+print(set_1.union(set_2, (3, 5, 3)))
+print(set_1.union(set_2, [3, 5, 3]))
+# print(set_1.union(set_2, 9))
+print(set_1.union(set_2, range(9, 15, 2)))
+print(set_1.union(set_2, "kdjfsdh34jh"))
+
 # множество из элементов, встречающихся в одном множестве, но не встречающиеся в обоих
 print('set_1.difference(set_2, set_3) => ', set_1.difference(set_2, set_3))
 
+print(set_1 == set_2)
+
+print(set_1 > set_2)  # TODO
+
+# -----------------------
+
+# list  - это итерируемый тип и поэтому его можно использовать в for
+for element in {2, None, 'opopo', 7.77}:
+    print(element)
