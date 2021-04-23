@@ -26,6 +26,9 @@ list_misc = ["a", "sample", 44, 55, "program"]
 s = '_'.join([str(elem) for elem in list_misc])
 print(s)  # a_sample_44_55_program
 
+l_str = str(list_misc)
+print(l_str)
+
 print('\n--------------------------------------- Eval ----------------------------------------------------------------')
 list_str = '[1, 4, 6, "fff", True]'
 converted_list = eval(list_str)

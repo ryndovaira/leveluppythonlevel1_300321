@@ -18,3 +18,20 @@
 Если в списке с оценками есть элементы НЕ int (0 <= mark <= 100),
 то возвращать строку 'Marks must be int (0 to 100)!'
 """
+from itertools import zip_longest
+
+
+def zip_name_mark(names, marks):
+    if type(names) != list or type(marks) != list or len(names) == 0 or len(marks) == 0:
+        return 'Both args must be list and not empty!'
+
+    for n in names:
+        if type(n) != str:
+            return 'Names must be str!'
+
+    for m in marks:
+        # if type(m) != int or m > 100 or m < 0:
+        if type(m) != int or not (0 <= m <= 100):
+            return 'Marks must be int (0 to 100)!'
+
+    return list(zip_longest(names, marks, fillvalue='!!!'))

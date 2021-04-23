@@ -18,3 +18,21 @@
 
 Если list, str и tuple различного размера, обрезаем до минимального (стандартный zip).
 """
+
+
+def zip_common(my_list, my_str, my_tuple):
+    if type(my_list) != list:
+        return 'First arg must be list!'
+    if type(my_str) != str:
+        return 'Second arg must be str!'
+    if type(my_tuple) != tuple:
+        return 'Third arg must be tuple!'
+
+    if len(my_list) == 0:
+        return 'Empty list!'
+    if len(my_str) == 0:
+        return 'Empty str!'
+    if len(my_tuple) == 0:
+        return 'Empty tuple!'
+
+    return list(zip(my_list, my_str, my_tuple))

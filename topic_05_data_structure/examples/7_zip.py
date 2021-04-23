@@ -1,6 +1,10 @@
 from itertools import zip_longest
 
 print('\n--------------------------------------- Common --------------------------------------------------------------')
+
+ex_without_convert = zip([0, 1, 2], "012")
+print(ex_without_convert)
+
 ex_common = list(zip([0, 1, 2], "012", ("zero", "one", "two")))
 print(ex_common)  # [(0, '0', 'zero'), (1, '1', 'one'), (2, '2', 'two')]
 
@@ -21,6 +25,9 @@ letters = ['a', 'b', 'c']
 numbers = [0, 1, 2]
 for l, n in zip(letters, numbers):
     print(f'Letter: {l} | Number: {n}')
+
+for pair in zip(letters, numbers):
+    print(f'Letter: {pair[0]} | Number: {pair[1]}')
 
 print('\n--------------------------------------- For (dict) ----------------------------------------------------------')
 dict_one = {'first_name': 'John', 'last_name': 'Doe', 'job': 'Python Consultant'}
