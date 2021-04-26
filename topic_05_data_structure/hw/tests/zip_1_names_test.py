@@ -15,7 +15,7 @@ params = [
     ([1], set(), 'Empty set!'),
 
     (['Rose'], {'Black'}, [('Rose', 'Black')]),
-    (['Rose'], {'Black', 'Pink'}, [('Rose', 'Black')]),
+    (['Rose', 'White'], {'Black'}, [('Rose', 'Black')]),
     (['Rose', 'Mark'], {'Black', 'Pink'}, [('Rose', 'Pink'), ('Mark', 'Black')]),
 ]
 
