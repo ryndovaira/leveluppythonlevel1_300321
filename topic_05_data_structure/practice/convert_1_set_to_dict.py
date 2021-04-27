@@ -18,3 +18,23 @@
 
 ВНИМАНИЕ: нумерация индексов начинается с 0!
 """
+
+
+def set_to_dict(my_set: set, val):
+    if type(my_set) != set:
+        return 'First arg must be set!'
+
+    # if not my_set:
+    #     return {}  # пустой словарь
+
+    set_len = len(my_set)
+
+    result_dict = dict()
+    for elem in my_set:
+        result_dict[elem] = (elem == val, set_len)
+
+    return result_dict
+
+
+if __name__ == '__main__':
+    print(set_to_dict({1, 3, 2}, 2))

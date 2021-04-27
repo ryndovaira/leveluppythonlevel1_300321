@@ -15,3 +15,40 @@
 
 Если dict пуст, то возвращать [[], [], 0, 0, False].
 """
+
+
+def dict_to_list(my_dict: dict):
+    if type(my_dict) != dict:
+        return 'Must be dict!'
+    elif not my_dict:
+        return [[], [], 0, 0, False]
+
+    keys_list = list(my_dict.keys())
+    values_list = list(my_dict.values())
+    len_keys_pow_3 = len(keys_list) ** 3
+    len_unique_values = len(set(values_list))
+    key_equal_val = False
+
+    # Способ 1
+    # for k in my_dict.keys():
+    #     for v in my_dict.values():
+    #         if k == v:
+    #             key_equal_val = True
+    #             break
+    #     if key_equal_val:
+    #         break
+
+    # Способ 2
+    for k in my_dict.keys():
+        # key_equal_val = k in values_list
+        # if key_equal_val:
+        #     break
+        if k in values_list:
+            key_equal_val = True
+            break
+
+    return [keys_list, values_list, len_keys_pow_3, len_unique_values, key_equal_val]
+
+
+if __name__ == '__main__':
+    dict_to_list({1: 3, 2: 3, 3: 1, 4: 7})
