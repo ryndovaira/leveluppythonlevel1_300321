@@ -27,9 +27,10 @@ def dict_to_list(my_dict: dict):
     values_list = list(my_dict.values())
     len_keys_pow_3 = len(keys_list) ** 3
     len_unique_values = len(set(values_list))
-    key_equal_val = False
+
 
     # Способ 1
+    # key_equal_val = False
     # for k in my_dict.keys():
     #     for v in my_dict.values():
     #         if k == v:
@@ -39,13 +40,23 @@ def dict_to_list(my_dict: dict):
     #         break
 
     # Способ 2
+    # key_equal_val = False
+    # for k in my_dict.keys():
+    #     # key_equal_val = k in values_list
+    #     # if key_equal_val:
+    #     #     break
+    #     if k in values_list:
+    #         key_equal_val = True
+    #         break
+
+    # Способ 3
+    key_equal_val = True
     for k in my_dict.keys():
-        # key_equal_val = k in values_list
-        # if key_equal_val:
-        #     break
         if k in values_list:
-            key_equal_val = True
             break
+    else:
+        # перейдем сюда только, если не сработал break
+        key_equal_val = False
 
     return [keys_list, values_list, len_keys_pow_3, len_unique_values, key_equal_val]
 
