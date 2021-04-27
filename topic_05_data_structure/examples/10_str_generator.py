@@ -4,8 +4,8 @@
 
 my_list = [-2, -1, 0, 1, 2, 3, 4, 5]
 # используем генератор прямо в .join() одновременно приводя элементы к строковому типу
-my_str = ''.join(str(x) for x in my_list)
-print(my_str)  # -2-1012345
+my_str = '/'.join(str(x) for x in my_list)
+print(my_str)  # -2/-1/0/1/2/3/4/5
 
 
 my_dict = {1: 6, 2: 7, 3: 8}
