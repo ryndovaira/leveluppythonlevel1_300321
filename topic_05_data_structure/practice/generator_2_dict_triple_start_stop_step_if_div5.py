@@ -16,3 +16,13 @@
 
 Если step равен 0, то вернуть строку "Step can't be zero!"
 """
+
+
+def dict_triple_start_stop_step_if_div5(start, stop, step):
+    if type(start) != int or type(stop) != int or type(step) != int:
+        return 'Start and Stop and Step must be int!'
+
+    if step == 0:
+        return "Step can't be zero!"
+
+    return ((x, x * 3) for x in range(start, stop, step) if x % 5 == 0)
