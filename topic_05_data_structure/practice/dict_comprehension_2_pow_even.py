@@ -12,3 +12,10 @@
 
 Если n не является int, то вернуть строку 'Must be int!'.
 """
+
+
+def pow_even(n):
+    if type(n) != int:
+        return 'Must be int!'
+
+    return {elem: elem * elem for elem in range(n) if elem % 2 == 0}

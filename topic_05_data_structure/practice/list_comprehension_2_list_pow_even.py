@@ -10,3 +10,10 @@
 
 Если n не является int, то вернуть строку 'Must be int!'.
 """
+
+
+def list_pow_even(n):
+    if type(n) != int:
+        return 'Must be int!'
+
+    return [x ** 2 for x in range(n) if x % 2 == 0]
