@@ -3,11 +3,12 @@ class Dog:
         self.name = name
         self.age = age
 
-    def __add__(self, other):
+    def __add__(self, other: str):
         return str(other) + ' ' + self.name
 
-    def __radd__(self, other):
-        return str(other) + ' ' + self.name
+    def __radd__(self, other: str):
+        return self.__add__(other)
+        # return str(other) + ' ' + self.name
 
     def __len__(self):
         return self.age
@@ -16,25 +17,25 @@ class Dog:
         return f"{'*' * 50}\nName: {self.name}\nAge: {self.age}\n{'*' * 50}"
 
 
-dog = Dog('Rex', 2)
+rex = Dog('Rex', 2)
 
-print(f'Возраст собаки {dog.name} {dog.age} лет')
+print(f'Возраст собаки {rex.name} {rex.age} лет')
 
 # __add__ и оператор (+)
 
 # Вызов __add__ у Dog
-print(dog + 'Inspector')
-print(dog.__add__('Super'))  # эквивалентно
-print(dog + 4)
+print(rex + 'Inspector')
+print(rex.__add__('Inspector'))  # эквивалентно
+print(rex + 4)
 # Inspector Rex
 
 # Вызов __radd__ у str
-print('Inspector' + dog)
-print(dog.__radd__('Super'))  # эквивалентно
+print('Inspector' + rex)
+print(rex.__radd__('Inspector'))  # эквивалентно
 
 # Без использования __radd__:
 # TypeError: can only concatenate str (not "Dog") to str
 
-print(len(dog))
+print(len(rex))
 
-print(dog)
+print(rex)

@@ -1,17 +1,21 @@
 # Синтаксис:
-# class <ClassName>(<ClassNames>):
+# class <Person>(<Persons>):
 #   statements
 
 
-class MyClass:
+class Person:
+    # количество созданных людей
     count = 0   # поле класса
+    
+    # вызов функции print на класса
     print('Привет! Этот класс уже определен!')
 
     # Конструктор (фабрика, которая создаёт экземпляры)
-    def __init__(self, n):
+    def __init__(self, n, a):
         # Поле (атрибут) экземпляра (с названием name)
         self.name = n
-        MyClass.count += 1
+        self.age = a
+        Person.count += 1
 
     # def method(self[, args]):
     #   statements
@@ -23,30 +27,30 @@ class MyClass:
 
 
 # class создаёт класс (объект-класс)
-print(MyClass)
-# <class '__main__.MyClass'>
+print(Person)
+# <class '__main__.Person'>
 
-# Создание экземпляра класса
+# Создание экземпляра класса / инстанса
 # инстанцирование (англ. instantiation)
-instance = MyClass("MyObject")
-print(instance)
-# <__main__.MyClass object at 0x7fc1ae739f50>
+vasya_22 = Person("Вася", 22)
+print(vasya_22)
+# <__main__.Person object at 0x7fc1ae739f50>
 
-print(instance.name)  # MyObject
+print(vasya_22.name)  # Вася
 
-instance.print_name()  # MyObject
+vasya_22.print_name()  # Вася
 
-print(len(instance))
+print(len(vasya_22))
 
-print(MyClass.count)  # 1
-print(instance.count)  # 1
+print(Person.count)  # 1
+print(vasya_22.count)  # 1
 
-instance2 = MyClass("MyObject2")
+olya_66 = Person("Оля", 66)
 
-instance2.print_name()  # MyObject2
+olya_66.print_name()  # Оля
 
-print(len(instance2))
+print(len(olya_66))
 
-print(MyClass.count)  # 2
-print(instance.count)  # 2
-print(instance2.count)  # 2
+print(Person.count)  # 2
+print(vasya_22.count)  # 2
+print(olya_66.count)  # 2
