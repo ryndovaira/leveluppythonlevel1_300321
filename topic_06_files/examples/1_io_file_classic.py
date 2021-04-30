@@ -1,3 +1,5 @@
+import os
+
 print('\n--------------------------------------- Read file (lines) ---------------------------------------------------')
 # Прочитать файл file.txt и вывести его
 # strip() убирает пробелы, табуляции и
@@ -35,3 +37,13 @@ with open("list3.txt", "w") as f3:
 # из одного файла читаем в другой пишем
 with open("list3.txt", 'r') as f1, open("list3_eq.txt", 'w') as f2:
     f2.write(f1.read())
+
+abs_path = "/home/ira/LevelUp/leveluppythonlevel1_300321/topic_06_files/list_abs.txt"
+rel_path = "../../list_rel.txt"     # относительный
+for i in range(3):
+    if os.path.exists(abs_path):
+        print('It exists!')
+    else:
+        with open(abs_path, "x") as f1:
+            f1.write(str(my_list))
+        print('Create!')
