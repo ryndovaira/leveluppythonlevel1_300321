@@ -36,18 +36,30 @@ class Book:
         for page in self.pages:
             print(page)
 
+    # нужно пользоваться встроенной функцией len
     def __len__(self):
+        return len(self.pages)
+
+    # нужно будет вызывать через точку
+    def len(self):
         return len(self.pages)
 
     def get_even_pages(self):
         return [page for page in self.pages if page.num_page % 2 == 0]
 
+    # для символов (например, ~) важно использовать магические методы
     def __invert__(self):
         return self.name[::-1].title()
 
+    # для символов (например, +) важно использовать магические методы
     def __add__(self, other):
         self.year += other
         return self.year
+
+
+# можно, но очень плохой стиль
+# def len(b):
+#     len(b.pages)
 
 
 if __name__ == '__main__':
@@ -64,6 +76,7 @@ if __name__ == '__main__':
     book.print_all()
 
     print(len(book))
+    print(book.len())
 
     print(book.get_even_pages())
     print([str(page) for page in book.get_even_pages()])
