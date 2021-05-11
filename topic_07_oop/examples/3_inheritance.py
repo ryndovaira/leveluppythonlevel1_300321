@@ -1,6 +1,6 @@
 # эквивалентно class Person:
 # эквивалентно class Person():
-class Person(object):   # эквивалентно class Person:# эквивалентно
+class Person(object):  # эквивалентно class Person:# эквивалентно
     def __init__(self, first, last, age):
         self.firstname = first
         self.lastname = last
@@ -31,25 +31,28 @@ class Student(Person):
         self.avg_mark = avg_mark
 
 
-class Empty(object):  # все в Python наследуется от object. эквивалентно class Invalid:
-    # def __init__(self):
-    #     pass
+# все в Python наследуется от object.
+class Empty1(object):
     ...
+
+
+# эквивалентно
+class Empty2:
+    def __init__(self):
+        pass
 
 
 p = Person("Ivan", "Ivanov", 36)
 e = Employee("Petr", "Petrov", 28, "1007")
 s = Student('Masha', "Vasileva", 66, 4.8)
 
+print(p)  # Ivan Ivanov, 36
+print(e)  # Petr Petrov, 28, 1007
+print(e.str_parent())  # Petr Petrov, 28
 
-print(p)    # Ivan Ivanov, 36
-print(e)    # Petr Petrov, 28, 1007
-print(e.str_parent())   # Petr Petrov, 28
-
-print(s)    # используется родительский метод __str__
-
+print(s)  # используется родительский метод __str__
 
 # --------------------------
-i = Empty()
+i = Empty1()
 
-print(i)    # <__main__.Empty object at 0x7fb2b73bad00>
+print(i)  # <__main__.Empty1 object at 0x7fb2b73bad00>

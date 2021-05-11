@@ -24,4 +24,5 @@ a.swim()  # Sailing in the ocean
 print(isinstance(a, Auto))  # True
 print(isinstance(a, Boat))  # True
 print(isinstance(a, Amphibian))  # True
+print(isinstance(a, (Auto, Amphibian, ChildAmphibian)))  # через OR: является ли объект a экземпляром одного из классов?
 print(isinstance(a, ChildAmphibian))  # False
