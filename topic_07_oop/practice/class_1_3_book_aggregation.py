@@ -65,8 +65,13 @@ if __name__ == '__main__':
 
     print(len(book))
 
+    print(book.get_even_pages())
     print([str(page) for page in book.get_even_pages()])
+
     print(*book.get_even_pages(), sep=" | ")
+    # эквивалентно (в данном случае):
+    even_pages = book.get_even_pages()
+    print(even_pages[0], even_pages[1], sep=" | ")
 
     print(~book)
 
