@@ -4,7 +4,7 @@ lst_tmp = [1, 2, 3]     # мутабельный (изменяемый) list
 
 def append_default(element=a, lst=[], lst2=lst_tmp):
     lst.append(element)
-    lst2.append(element)
+    lst2.append(element)    # изменили состояние переменной lst_tmp
     return element, lst, lst2
 
 
