@@ -42,6 +42,7 @@ constant_function()
 
 
 # ---------------------------------- Используем декоратор Python ------------------------------------------------------
+# эквивалентно another_const_function = my_decorator(another_const_function)
 @my_decorator       # - это декоратор
 def another_const_function():
     print("Меня тоже нельзя менять!")
