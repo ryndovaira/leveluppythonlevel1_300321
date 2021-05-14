@@ -21,3 +21,17 @@
 
 ВНИМАНИЕ: нумерация индексов начинается с 0!
 """
+
+
+def list_to_dict(my_list, val):
+    if type(my_list) != list:
+        return 'First arg must be list!'
+
+    len_dict = len(set(my_list))
+
+    result_dict = {}
+
+    for index, element in enumerate(my_list):
+        result_dict[element] = (index, element == val, len_dict)
+
+    return result_dict

@@ -11,7 +11,7 @@ class Notes(Enum):
 
     # worker_names = ('Anton', 'Kate')    # TypeError: Attempted to reuse key: 'worker_names'
 
-    friends_names = ('Anton', 'Kate')   # будет пропущено
+    friends_names = ('Anton', 'Kate')  # будет пропущено
 
 
 if __name__ == '__main__':

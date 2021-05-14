@@ -2,6 +2,7 @@ import pytest
 
 from topic_05_data_structure.hw.convert_3_dict_to_list import dict_to_list
 
+# TODO Tuple to list
 params = [
     ([], 'Must be dict!'),
     ((), 'Must be dict!'),
@@ -24,6 +25,3 @@ ids = ["dict: %s => %s" % (my_dict, expected) for (my_dict, expected) in params]
                          ids=ids)
 def test_dict_to_list(my_dict, expected):
     assert dict_to_list(my_dict) == expected
-
-
-
