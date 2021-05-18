@@ -32,21 +32,21 @@ body_part_keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True,
 body_part_keyboard.row(*[types.KeyboardButton(body_part.name) for body_part in BodyPart])
 
 
-def update_save_stat(user_id, result: GameResult):
+def update_save_stat(chat_id, result: GameResult):
     print("Обновление статистики", end="...")
     global statistics
 
-    user_id = str(user_id)
+    chat_id = str(chat_id)
 
-    if statistics.get(user_id, None) is None:
-        statistics[user_id] = {}
+    if statistics.get(chat_id, None) is None:
+        statistics[chat_id] = {}
 
     if result == GameResult.W:
-        statistics[user_id]['W'] = statistics[user_id].get('W', 0) + 1
+        statistics[chat_id]['W'] = statistics[chat_id].get('W', 0) + 1
     elif result == GameResult.L:
-        statistics[user_id]['L'] = statistics[user_id].get('L', 0) + 1
+        statistics[chat_id]['L'] = statistics[chat_id].get('L', 0) + 1
     elif result == GameResult.E:
-        statistics[user_id]['E'] = statistics[user_id].get('E', 0) + 1
+        statistics[chat_id]['E'] = statistics[chat_id].get('E', 0) + 1
     else:
         print(f"Не существует результата {result}")
 
@@ -64,7 +64,7 @@ def load_stat():
         with open(stat_file, 'r') as file:
             statistics = json.load(file)
         print('завершена успешно!')
-    except FileNotFoundError as my_error:
+    except FileNotFoundError:
         statistics = {}
         print('файл не найден!')
 
@@ -149,7 +149,7 @@ def ask_user_about_pokemon_type(message):
 @bot.callback_query_handler(func=lambda call: "pokemon_type_" in call.data)
 def pokemon_type_handler(call):
     call_data_split = call.data.split("_")
-    if len(call_data_split) < 3 or not call_data_split[2].isdigit():
+    if len(call_data_split) != 3 or not call_data_split[2].isdigit():
         bot.send_message(call.message.chat.id, "Возникла проблема. Перезапусти сессию!")
     else:
         pokemon_type_id = int(call_data_split[2])
@@ -175,7 +175,7 @@ def ask_user_about_pokemon_by_type(pokemon_type_id, message):
 @bot.callback_query_handler(func=lambda call: "pokemon_name_" in call.data)
 def pokemon_name_handler(call):
     call_data_split = call.data.split("_")
-    if len(call_data_split) < 4 or not call_data_split[2].isdigit():
+    if len(call_data_split) != 4 or not call_data_split[2].isdigit():
         bot.send_message(call.message.chat.id, "Возникла проблема. Перезапусти сессию!")
     else:
         pokemon_type_id, pokemon_name = int(call_data_split[2]), call_data_split[3]

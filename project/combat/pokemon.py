@@ -14,7 +14,7 @@ class Pokemon:
         self.hp = 100
         self.attack_point = None
         self.defence_point = None
-        self.hit_power = 5
+        self.hit_power = 20
         self.state = PokemonState.READY
 
     def __str__(self):

@@ -1,8 +1,9 @@
-from enum import Enum
+from enum import Enum, auto
 
-# class PokemonState(Enum):
-#     READY = auto()
-#     DEFEATED = auto()
+
+class PokemonState(Enum):
+    READY = auto()
+    DEFEATED = auto()
 
 # короткая запись
-PokemonState = Enum('PokemonState', "READY DEFEATED")
+# PokemonState = Enum('PokemonState', "READY DEFEATED")
